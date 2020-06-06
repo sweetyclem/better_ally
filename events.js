@@ -4,7 +4,7 @@ const slackEvents = createEventAdapter(slackSigningSecret)
 const { WebClient } = require('@slack/web-api')
 const token = process.env.SLACK_BOT_TOKEN
 const web = new WebClient(token)
-const subjects = require('./subjects.json')
+const subjects = require('./elements/subjects.json')
 
 function listenForEvents(app) {
   app.use('/events', slackEvents.requestListener())

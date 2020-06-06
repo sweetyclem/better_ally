@@ -1,7 +1,7 @@
 const { createMessageAdapter } = require('@slack/interactive-messages')
 const slackSigningSecret = process.env.SLACK_SIGNING_SECRET
 const slackInteractions = createMessageAdapter(slackSigningSecret)
-const articleOrBookButton = require('./articleOrBookButton.json')
+const articleOrBookButton = require('./elements/articleOrBookButton.json')
 
 module.exports.listenForInteractions = function (app) {
   app.use('/interactions', slackInteractions.requestListener())
