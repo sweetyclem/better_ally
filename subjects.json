@@ -1,0 +1,32 @@
+{
+  "text": "Hello! What subject would you like to learn more about?",
+  "fallback": "Upgrade your Slack client to use messages like these.",
+  "color": "#3AA3E3",
+  "attachment_type": "default",
+  "callback_id": "subjects",
+  "actions": [
+    {
+      "name": "subject_list",
+      "text": "Select one",
+      "type": "select",
+      "options": [
+        {
+          "text": "Anti Racism",
+          "value": "anti_racism"
+        },
+        {
+          "text": "Anti Sexism",
+          "value": "anti_sexism"
+        },
+        {
+          "text": "LGBTQ Allyship",
+          "value": "lgbtq_allyship"
+        },
+        {
+          "text": "Autism allyship",
+          "value": "autism_allyship"
+        }
+      ]
+    }
+  ]
+}
