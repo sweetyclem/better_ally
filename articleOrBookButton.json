@@ -1,0 +1,19 @@
+{
+  "fallback": "Upgrade your Slack client to use messages like these.",
+  "color": "#3AA3E3",
+  "attachment_type": "default",
+  "actions": [
+    {
+      "name": "article",
+      "text": "Article",
+      "type": "button",
+      "value": "article"
+    },
+    {
+      "name": "book",
+      "text": "Book",
+      "type": "button",
+      "value": "book"
+    }
+  ]
+}

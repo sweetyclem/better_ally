@@ -19,6 +19,7 @@
   "homepage": "https://github.com/sweetyclem/better_ally#readme",
   "dependencies": {
     "@slack/events-api": "^2.3.3",
+    "@slack/interactive-messages": "^1.6.0",
     "@slack/web-api": "^5.10.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
