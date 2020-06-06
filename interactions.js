@@ -11,6 +11,10 @@ slackInteractions.action({ type: 'select' }, (payload, respond) => {
   respondToSelectDropdown(payload, respond)
 })
 
+slackInteractions.action({ type: 'button' }, (payload, respond) => {
+  respondToButton(payload, respond)
+})
+
 function respondToSelectDropdown(payload, respond) {
   const selectedOption = payload.actions[0].selected_options[0].value
 
@@ -42,6 +46,27 @@ function respondToSelectDropdown(payload, respond) {
   return { text: 'Processing...' }
 }
 
+function respondToButton(payload, respond) {
+  console.log('selectedOption: ', payload.actions[0].value)
+
+  switch (payload.callback_id) {
+    case 'anti_racism_article_book':
+      respondToAntiRacismArticlBookeButton(payload.actions[0].value, respond)
+      break
+    case 'anti_sexism_article_book':
+      respondToAntiSexismArticleBookButton(payload.actions[0].value, respond)
+      break
+    case 'lgbtq_allyship_article_book':
+      respondToLgbtqAllyshipButton(payload.actions[0].value, respond)
+      break
+    case 'autism_allyship_article_book':
+      respondToAutismAllyshipButton(payload.actions[0].value, respond)
+      break
+  }
+  // Return a replacement message
+  return { text: 'Processing...' }
+}
+
 function respondWithArticleOrBookNoButton(text, callbackId, respond) {
   articleOrBookButton.callback_id = callbackId
   articleOrBookButton.text = 'Do you prefer an article or a book?'
@@ -50,4 +75,22 @@ function respondWithArticleOrBookNoButton(text, callbackId, respond) {
     attachments: [articleOrBookButton],
     replace_original: true
   })
+}
+
+function respondToAntiRacismArticlBookeButton(selectedOption, respond) {
+  const antiRacismArticle = require('./resources/antiRacismArticle.json')
+  const antiRacismBook = require('./resources/antiRacismBook.json')
+
+  if (selectedOption == 'article') {
+    respond({
+      blocks: antiRacismArticle,
+      replace_original: true
+    })
+  }
+  else {
+    respond({
+      blocks: antiRacismBook,
+      replace_original: true
+    })
+  }
 }
