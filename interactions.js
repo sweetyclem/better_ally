@@ -32,7 +32,7 @@ function respondToSelectDropdown(payload, respond) {
         respondWithArticleOrBookNoButton(text, callbackId, respond)
         break
       case 'lgbtq_allyship':
-        text = 'You selected LGBTQ Allyship.'
+        text = 'You selected LGBTQ+ Allyship.'
         callbackId = 'lgbtq_allyship_article_book'
         respondWithArticleOrBookNoButton(text, callbackId, respond)
         break
