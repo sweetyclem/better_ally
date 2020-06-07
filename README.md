@@ -1,6 +1,5 @@
 ## Running the app locally
-
-Tutorial for this app:
+Tutorial for this app: https://medium.com/@sweetyclem/making-an-interactive-slack-app-part-1
 
 ### Add environment variables
 Add a `.env` file with [these](https://gist.github.com/sweetyclem/4382f0fab211f36d2a3a82039353eb1b) variables
